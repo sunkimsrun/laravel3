@@ -11,9 +11,6 @@ use App\Http\Middleware\EnsureTokenIsValid;
 Route::middleware([EnsureTokenIsValid::class])->group(function () {
 
 
-
-
-
     //below this is code for week 12 to week 14
     Route::get('/', function () {
         return view('welcome');
@@ -119,6 +116,7 @@ Route::middleware([EnsureTokenIsValid::class])->group(function () {
 
 
 
+    
     //កន្លែងនេះគ្រាន់ចង់សាកល្បងថា ពេលdelete user តើវាដំណើរការបានដែរឬទេ (ដំបូងត្រូវloginមុនសិន ទៅយកtokenរួចចាំដាក់ចូលក្នុងBearver ទើបdeleteបាន)
     Route::delete('users/{id}', function ($id) {
         return User::destroy($id)
